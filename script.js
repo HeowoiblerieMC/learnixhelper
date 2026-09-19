@@ -7,7 +7,7 @@ function sendMessage() {
 
     if (text === "") return;
 
-    // user msg
+    // User message
     chatBox.innerHTML += `
         <div class="message">
             <span class="user">You:</span> ${text}
@@ -18,32 +18,23 @@ function sendMessage() {
     const lower = text.toLowerCase();
 
     // Calculator
-if (/^[0-9+\-*/(). ]+$/.test(text)) {
+    if (/^[0-9+\-*/(). ]+$/.test(text)) {
 
-    try {
-        response = eval(text).toString();
+        try {
+            response = Function(
+                '"use strict"; return (' + text + ')'
+            )().toString();
+
+        } catch {
+
+            response = "Invalid calculation.";
+
+        }
+
     }
-
-    catch {
-        response = "Invalid calculation.";
-    }
-
-}
-
-// Commands
-else if (text === "/help") {
-
-    response = `
-Available commands:<br>
-/help<br>
-/about<br>
-/languages
-`;
-
-}
 
     // Commands
-    if (text === "/help") {
+    else if (text === "/help") {
 
         response = `
 Available commands:<br>
@@ -137,11 +128,11 @@ Available commands:<br>
     else {
 
         response =
-        "I'm still learning. Please ask about math, science, history, or English.";
+        "I'm still learning.";
 
     }
 
-    // AI msg
+    // AI response
     chatBox.innerHTML += `
         <div class="message">
             <span class="ai">LearnixAI:</span> ${response}
@@ -154,7 +145,7 @@ Available commands:<br>
 }
 
 
-// Enter send
+// Enter key
 document.getElementById("user-input")
 .addEventListener("keydown", function(event) {
 
