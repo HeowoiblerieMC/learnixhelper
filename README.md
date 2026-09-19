@@ -1,5 +1,5 @@
 # learnixhelper
-# LearnixAI
+# LearnixAI 🤖📗
 
 LearnixAI is a multilingual educational AI assistant designed to help students learn more effectively.
 
@@ -38,17 +38,17 @@ LearnixAI aims to become a smart learning companion that helps students:
 Currently planned:
 
 - English
-- Japanese
+- French
 - Chinese
 - Spanish
-- French
+- Japanese
 - German
 
 The response language will automatically adapt to the user's input language whenever possible.
 
 ## Example
 
-**User**
+**User in English**
 
 > Explain photosynthesis.
 
@@ -58,7 +58,7 @@ The response language will automatically adapt to the user's input language when
 
 ---
 
-**User**
+**User in Japanese**
 
 > 光合成を説明して
 
