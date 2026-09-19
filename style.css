@@ -1,38 +1,55 @@
-function sendMessage() {
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    margin: 0;
+    padding: 20px;
+}
 
-    const input = document.getElementById("user-input");
-    const chatBox = document.getElementById("chat-box");
+.container {
+    max-width: 800px;
+    margin: auto;
+}
 
-    const text = input.value.trim();
+h1 {
+    color: #2563eb;
+}
 
-    if (!text) return;
+#chat-box {
+    height: 400px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    overflow-y: auto;
+}
 
-    chatBox.innerHTML += `
-        <div class="message">
-            <span class="user">You:</span> ${text}
-        </div>
-    `;
+.input-area {
+    display: flex;
+    gap: 10px;
+}
 
-    let response = "Hello! I am LearnixAI.";
+input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+}
 
-    if (/[ぁ-んァ-ン一-龥]/.test(text)) {
-        response = "こんにちは！私は LearnixAI です！";
-    }
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
 
-    else if (
-        /[àâçéèêëîïôûùüÿœ]/i.test(text) ||
-        /(bonjour|salut|merci)/i.test(text)
-    ) {
-        response = "Bonjour ! Je suis LearnixAI.";
-    }
+.user {
+    color: #2563eb;
+    font-weight: bold;
+}
 
-    chatBox.innerHTML += `
-        <div class="message">
-            <span class="ai">LearnixAI:</span> ${response}
-        </div>
-    `;
+.ai {
+    color: #16a34a;
+    font-weight: bold;
+}
 
-    input.value = "";
-
-    chatBox.scrollTop = chatBox.scrollHeight;
+.message {
+    margin: 10px 0;
 }
