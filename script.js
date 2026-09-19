@@ -57,3 +57,13 @@ function sendMessage() {
 
     chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+
+// Enter and send
+document.getElementById("user-input").addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+
+});
