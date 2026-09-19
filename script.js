@@ -19,7 +19,7 @@ function sendMessage() {
     let response = "";
     const lower = text.toLowerCase();
 
-    // Quiz mode
+    // Quiz answer check
     if (currentAnswer !== null) {
 
         if (text === currentAnswer.toString()) {
@@ -35,7 +35,7 @@ function sendMessage() {
 
     }
 
-    // Create Quiz
+    // Quiz command
     else if (text === "/quiz") {
 
         const a = Math.floor(Math.random() * 20) + 1;
@@ -56,9 +56,7 @@ function sendMessage() {
                 '"use strict"; return (' + text + ')'
             )().toString();
 
-        }
-
-        catch {
+        } catch {
 
             response = "Invalid calculation.";
 
