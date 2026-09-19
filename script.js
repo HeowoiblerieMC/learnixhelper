@@ -1,3 +1,5 @@
+let currentAnswer = null;
+
 function sendMessage() {
 
     const input = document.getElementById("user-input");
@@ -17,15 +19,46 @@ function sendMessage() {
     let response = "";
     const lower = text.toLowerCase();
 
+    // Quiz mode
+    if (currentAnswer !== null) {
+
+        if (text === currentAnswer.toString()) {
+
+            response = "✅ Correct!";
+            currentAnswer = null;
+
+        } else {
+
+            response = "❌ Try again!";
+
+        }
+
+    }
+
+    // Create Quiz
+    else if (text === "/quiz") {
+
+        const a = Math.floor(Math.random() * 20) + 1;
+        const b = Math.floor(Math.random() * 20) + 1;
+
+        currentAnswer = a * b;
+
+        response = `Question: What is ${a} × ${b}?`;
+
+    }
+
     // Calculator
-    if (/^[0-9+\-*/(). ]+$/.test(text)) {
+    else if (/^[0-9+\-*/(). ]+$/.test(text)) {
 
         try {
+
             response = Function(
                 '"use strict"; return (' + text + ')'
             )().toString();
 
-        } catch {
+        }
+
+        catch {
 
             response = "Invalid calculation.";
 
@@ -40,7 +73,8 @@ function sendMessage() {
 Available commands:<br>
 /help<br>
 /about<br>
-/languages
+/languages<br>
+/quiz
 `;
 
     }
@@ -64,6 +98,20 @@ Available commands:<br>
 
         response =
         "Hello! How can I help you today?";
+
+    }
+
+    else if (lower.includes("wow")) {
+
+        response =
+        "😎 Glad you like it!";
+
+    }
+
+    else if (lower.includes("great")) {
+
+        response =
+        "🔥 Awesome!";
 
     }
 
