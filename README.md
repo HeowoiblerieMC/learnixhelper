@@ -1,4 +1,6 @@
 # learnixhelper
+**https://heowoibleriemc.github.io/learnixhelper/**
+
 # LearnixAI 🤖📗
 
 LearnixAI is a multilingual educational AI assistant designed to help students learn more effectively.
