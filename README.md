@@ -60,7 +60,7 @@ The response language will automatically adapt to the user's input language when
 
 **User in Japanese**
 
-> 光合成を説明して
+> 光合成を説明してください。
 
 **LearnixAI**
 
