@@ -17,6 +17,31 @@ function sendMessage() {
     let response = "";
     const lower = text.toLowerCase();
 
+    // Calculator
+if (/^[0-9+\-*/(). ]+$/.test(text)) {
+
+    try {
+        response = eval(text).toString();
+    }
+
+    catch {
+        response = "Invalid calculation.";
+    }
+
+}
+
+// Commands
+else if (text === "/help") {
+
+    response = `
+Available commands:<br>
+/help<br>
+/about<br>
+/languages
+`;
+
+}
+
     // Commands
     if (text === "/help") {
 
