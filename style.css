@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
+    background: #f5f7fb;
     margin: 0;
     padding: 20px;
 }
@@ -20,22 +20,8 @@ h1 {
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 15px;
-    overflow-y: auto;
     margin-bottom: 15px;
-}
-
-.message {
-    margin: 10px 0;
-}
-
-.user {
-    color: #2563eb;
-    font-weight: bold;
-}
-
-.ai {
-    color: #16a34a;
-    font-weight: bold;
+    overflow-y: auto;
 }
 
 .input-area {
@@ -52,4 +38,18 @@ input {
 button {
     padding: 10px 20px;
     cursor: pointer;
+}
+
+.user {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.ai {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.message {
+    margin: 10px 0;
 }
