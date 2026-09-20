@@ -10,12 +10,21 @@
 <body>
 
     <div class="container">
-        <h1>🤖 LearnixAI</h1>
+
+        <div class="top-bar">
+            <h1>🤖 LearnixAI</h1>
+
+            <button onclick="toggleTheme()">
+                🌙 Theme
+            </button>
+        </div>
+
         <p>Your Personal Learning Companion</p>
 
         <div id="chat-box"></div>
 
         <div class="input-area">
+
             <input
                 type="text"
                 id="user-input"
@@ -25,7 +34,9 @@
             <button onclick="sendMessage()">
                 Send
             </button>
+
         </div>
+
     </div>
 
     <script src="script.js"></script>
