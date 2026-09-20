@@ -66,27 +66,34 @@ button:hover {
     font-weight: bold;
 }
 
-
 /* Dark Mode */
 
-.dark {
+body.dark {
     background: #0f172a;
     color: white;
 }
 
-.dark #chat-box {
+body.dark #chat-box {
     background: #1e293b;
     color: white;
     border-color: #334155;
 }
 
-.dark input {
+body.dark input {
     background: #334155;
     color: white;
     border: 1px solid #475569;
 }
 
-.dark button {
+body.dark button {
     background: #334155;
     color: white;
+}
+
+body.dark h1 {
+    color: #60a5fa;
+}
+
+body.dark p {
+    color: #e2e8f0;
 }
