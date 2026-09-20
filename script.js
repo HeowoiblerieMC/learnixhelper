@@ -49,23 +49,168 @@ function sendMessage() {
     // Calculator
     else if (/^[0-9+\-*/(). ]+$/.test(text)) {
 
-  *     try {
+        try {
 
-            response =*Function(
-                '"use st*ict"; return (' + text + ')'
-     *      )().toString();
+            response = Function(
+                '"use strict"; return (' + text + ')'
+            )().toString();
 
-        } c*tch {
+        } catch {
 
-            response = "Inv*lid calculation.";
+            response = "Invalid calculation.";
 
         }
 
-   *}
+    }
 
     // Commands
-    else if (te*t === "/help") {
+    else if (text === "/help") {
 
-        response*= `
+        response = `
 Available commands:<br>
-/help<*
+/help<br>
+/about<br>
+/languages<br>
+/quiz
+`;
+
+    }
+
+    else if (text === "/about") {
+
+        response =
+            "LearnixAI is a multilingual educational assistant.";
+
+    }
+
+    else if (text === "/languages") {
+
+        response =
+            "Supported languages: English, Japanese, French.";
+
+    }
+
+    // English
+    else if (lower.includes("hello")) {
+
+        response =
+            "Hello! How can I help you today?";
+
+    }
+
+    else if (lower.includes("wow")) {
+
+        response =
+            "😎 Glad you like it!";
+
+    }
+
+    else if (lower.includes("great")) {
+
+        response =
+            "🔥 Awesome!";
+
+    }
+
+    else if (lower.includes("nice")) {
+
+        response =
+            "😎 Thanks!";
+
+    }
+
+    else if (
+        lower.includes("help") ||
+        lower.includes("assist")
+    ) {
+
+        response =
+            "Of course! I can help with studying and general questions.";
+
+    }
+
+    else if (lower.includes("math")) {
+
+        response =
+            "I can help with mathematics.";
+
+    }
+
+    else if (lower.includes("science")) {
+
+        response =
+            "Let's learn some science!";
+
+    }
+
+    else if (lower.includes("english")) {
+
+        response =
+            "I can help with English.";
+
+    }
+
+    else if (lower.includes("history")) {
+
+        response =
+            "I can help with history.";
+
+    }
+
+    // Japanese
+    else if (/[ぁ-んァ-ン一-龥]/.test(text)) {
+
+        response =
+            "こんにちは！今日は何を勉強しますか？";
+
+    }
+
+    // French
+    else if (
+        lower.includes("bonjour") ||
+        lower.includes("merci")
+    ) {
+
+        response =
+            "Bonjour ! Comment puis-je vous aider ?";
+
+    }
+
+    // Default
+    else {
+
+        response =
+            "I'm still learning.";
+
+    }
+
+    chatBox.innerHTML += `
+        <div class="message">
+            <span class="ai">LearnixAI:</span> ${response}
+        </div>
+    `;
+
+    input.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+
+// Enter key
+document.getElementById("user-input").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+
+    }
+);
+
+
+// Theme toggle
+function toggleTheme() {
+
+    document.body.classList.toggle("dark");
+
+}
