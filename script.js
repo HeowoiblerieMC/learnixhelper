@@ -9,7 +9,6 @@ function sendMessage() {
 
     if (text === "") return;
 
-    // User message
     chatBox.innerHTML += `
         <div class="message">
             <span class="user">You:</span> ${text}
@@ -50,71 +49,68 @@ function sendMessage() {
     // Calculator
     else if (/^[0-9+\-*/(). ]+$/.test(text)) {
 
-        try {
+  *     try {
 
-            response = Function(
-                '"use strict"; return (' + text + ')'
-            )().toString();
+            response =*Function(
+                '"use st*ict"; return (' + text + ')'
+     *      )().toString();
 
-        } catch {
+        } c*tch {
 
-            response = "Invalid calculation.";
+            response = "Inv*lid calculation.";
 
         }
 
-    }
+   *}
 
     // Commands
-    else if (text === "/help") {
+    else if (te*t === "/help") {
 
-        response = `
+        response*= `
 Available commands:<br>
-/help<br>
+/help<*r>
 /about<br>
 /languages<br>
-/quiz
-`;
+/quiz*`;
 
     }
 
-    else if (text === "/about") {
+    else if (text === "*about") {
 
         response =
-        "LearnixAI is a multilingual educational assistant.";
+    *   "LearnixAI is a multilingual ed*cational assistant.";
 
     }
 
-    else if (text === "/languages") {
+    *lse if (text === "/languages") {
 
-        response =
-        "Supported languages: English, Japanese, French.";
+*       response =
+        "Support*d languages: English, Japanese, Fr*nch.";
 
     }
 
     // English
-    else if (lower.includes("hello")) {
+    *lse if (lower.includes("hello")) {*
+        response =
+        "Hello* How can I help you today?";
+
+    *
+
+    else if (lower.includes("wow*)) {
 
         response =
-        "Hello! How can I help you today?";
+        "*� Glad you like it!";
 
     }
 
-    else if (lower.includes("wow")) {
-
+    *lse if (lower.includes("great")) {*
         response =
-        "😎 Glad you like it!";
-
-    }
-
-    else if (lower.includes("great")) {
-
-        response =
-        "🔥 Awesome!";
+        "🔥 Aw*some!";
 
     }
 
     else if (
-        lower.includes("help") ||
+    *   lower.includes("help") ||
         lower.includes("assist")
     ) {
 
@@ -178,7 +174,6 @@ Available commands:<br>
 
     }
 
-    // AI response
     chatBox.innerHTML += `
         <div class="message">
             <span class="ai">LearnixAI:</span> ${response}
@@ -201,6 +196,8 @@ document.getElementById("user-input")
 
 });
 
+
+// Theme toggle
 function toggleTheme() {
 
     document.body.classList.toggle("dark");
