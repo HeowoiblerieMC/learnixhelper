@@ -200,3 +200,9 @@ document.getElementById("user-input")
     }
 
 });
+
+function toggleTheme() {
+
+    document.body.classList.toggle("dark");
+
+}
