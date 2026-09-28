@@ -101,7 +101,7 @@ Available commands:<br>
     else if (lower.includes("wow")) {
 
         response =
-            "😎 Glad you like it!";
+            "☺️ Glad you like it!";
 
     }
 
@@ -119,6 +119,13 @@ Available commands:<br>
 
     }
 
+    else if (lower.includes("no")) {
+
+        response =
+            "😠 What?";
+
+    }
+        
     else if (
         lower.includes("help") ||
         lower.includes("assist")
