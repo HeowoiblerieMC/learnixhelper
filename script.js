@@ -112,6 +112,13 @@ Available commands:<br>
 
     }
 
+    else if (lower.includes("OwO")) {
+
+        responce =
+            "UwU :3";
+
+    }
+    
     else if (lower.includes("nice")) {
 
         response =
